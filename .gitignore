@@ -1,0 +1,11 @@
+
+*.png
+vehicles/KITTI_extracted/.DS_Store
+vehicles/GTI_Right/.DS_Store
+vehicles/GTI_MiddleClose/.DS_Store
+vehicles/GTI_Left/.DS_Store
+vehicles/GTI_Far/.DS_Store
+vehicles/.DS_Store
+non-vehicles/.DS_Store
+non-vehicles/Extras/.DS_Store
+non-vehicles/GTI/.DS_Store
