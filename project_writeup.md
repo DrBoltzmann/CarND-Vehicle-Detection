@@ -120,19 +120,21 @@ The heat map addresses the problem of recurring detections, and frame by frame i
 
 The video outputs are included here, with bounding boxes displayed with detected vehicles.
 
-[link to my video result](./output_videos/test_output.mp4)
-![Test Video][video1]
+[link to Test Video result](https://youtu.be/NSmyolgroNE "Test Video")
 
-[link to my video result](./output_videos/project_video.mp4)
-![Project Video][video2]
+
+[link to Project Video result](https://youtu.be/5x_WFBsFStA "Project Video")
+
 
 ---
 
 ### Discussion
 
-#### 1. Vehicle Detection Approach
+#### 1. Current Vehicle Detection Approach
 
-In a relatively well-controlled environment, the use of feature characterization based on color transforms, HOG, etc. seems to work relatively well. however, the training data for this project was taken from the most ideal conditions possible: a sunny day on a highway in California. Visually this provided the best case, given the high color saturation of the images pulled from the video. This represents the easiest environment for vehicle detection, but in reality the algorithm would need to perform well in a variety of conditions, and problems will likely arise with lower contrast environments, such as overcast days, early morning, and at night, where it will be much more difficult to cleanly derive image features using HOG or color transformation methods. A better approach to data ingestion could be investigated here, applying transformations in OpenCV for better normalization, gray scale, and sharpening to see how this could improve the feature extraction and HOG visualization to differentiate vehicles from the environment.
+In a relatively well-controlled environment, the use of feature characterization based on color transforms, HOG, etc. seems to work relatively well. however, the training data for this project was taken from the most ideal conditions possible: a sunny day on a highway in California. Visually this provided the best case, given the high color saturation of the images pulled from the video.
+
+This project represents the easiest environment for vehicle detection, but in reality the algorithm would need to perform well in a variety of conditions, and problems will likely arise with lower contrast environments, such as overcast days, early morning, and at night, where it will be much more difficult to cleanly derive image features using HOG or color transformation methods. A better approach to data ingestion could be investigated here, applying transformations in OpenCV for better normalization, gray scale, and sharpening to see how this could improve the feature extraction and HOG visualization to differentiate vehicles from the environment.
 
 #### 2. Lane Finding Integration
 
