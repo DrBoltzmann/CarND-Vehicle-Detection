@@ -1,5 +1,3 @@
-
-*.png
 vehicles/KITTI_extracted/.DS_Store
 vehicles/GTI_Right/.DS_Store
 vehicles/GTI_MiddleClose/.DS_Store
