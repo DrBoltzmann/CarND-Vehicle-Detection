@@ -52,14 +52,14 @@ Key parameters for HOG included color space, orientations, pixels_per_cell, cell
 
 ![HOG image example_car_image_002][image3]
 
-Of particular interest is the way that car and notcar images are represented. Generally a car has a characteristic shape with the outer body and license plate providing a characteristics pattern. Environment images (notcar) typically are represented by horizontal or uniformly oriented stripe patterns. This difference in features should then provide a good basis for being able to classify the car images from the environment. The following HOG parameters provided good visual differentiation between car and notcar images:
+Of particular interest is the way that car and notcar images are represented. Generally a car has a characteristic shape with the outer body and license plate providing a characteristic pattern. Environment images (notcar) typically are represented by horizontal or uniformly oriented stripe patterns. This difference in features should then provide a good basis for being able to classify the car images from the environment. The following HOG parameters provided good visual differentiation between car and notcar images:
 * orient = 8-10
 * pix_per_cell = 6-8
 * cell_per_block = 2
 
 #### 2. Final choice of HOG parameters
 
-Final tuning of HOG parameters were done during the training of the SVC Classifier. The orient, pix_per_cell, and cell_per_block values were tuned previously based on the visual results. The color_space and hog_channel were evaluated with the error of the classifier training.
+Final tuning of HOG parameters was done during the training of the SVC Classifier. The orient, pix_per_cell, and cell_per_block values were tuned previously based on the visual results. The color_space and hog_channel were evaluated with the error of the classifier training.
 
 ##### Defined features parameters:
 * color_space = 'YCrCb'
@@ -99,7 +99,7 @@ The size of the window and the degree of overlap as the window moves across the 
 
 The overlap parameter was evaluated between 0.5 to 0.8, with optimal vehicle identification occurring with an overlap of 70% (0.7).
 
-The sliding window function was evaluated on test images, with characteristic results shown below. In the search_windows() function, a list of found windows is defined, if a window identifies as containing a vehicle (which occurs if the prediction of the trained model is equal to 1), then the on_windows list is appended, and the draw_boxes() function called to draw a green box around the identified image region (which should include a vehicle). To improve the vehicle finding, the double boxes will need to be accounted for.
+The sliding window function was evaluated on test images, with characteristic results shown below. In the search_windows() function, a list of found windows is defined, if a window identifies as containing a vehicle (which occurs if the prediction of the trained model is equal to 1), then the on_windows list is appended, and the draw_boxes() function called to draw a green box around the identified image region (which should include a vehicle). To improve the vehicle finding, the double boxes will needed to be accounted for.
 
 ![alt text][image5]
 
