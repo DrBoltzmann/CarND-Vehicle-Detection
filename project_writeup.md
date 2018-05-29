@@ -118,7 +118,7 @@ The heat map addresses the problem of recurring detections, and frame by frame i
 
 #### 1. Test and Project video outputs
 
-The vidoe outputs are included here, with bounding boxes displayed with detected vehicles.
+The video outputs are included here, with bounding boxes displayed with detected vehicles.
 
 [link to my video result](./output_videos/test_output.mp4)
 ![Test Video][video1]
@@ -130,6 +130,14 @@ The vidoe outputs are included here, with bounding boxes displayed with detected
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Vehicle Detection Approach
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+In a relatively well-controlled environment, the use of feature characterization based on color transforms, HOG, etc. seems to work relatively well. however, the training data for this project was taken from the most ideal conditions possible: a sunny day on a highway in California. Visually this provided the best case, given the high color saturation of the images pulled from the video. This represents the easiest environment for vehicle detection, but in reality the algorithm would need to perform well in a variety of conditions, and problems will likely arise with lower contrast environments, such as overcast days, early morning, and at night, where it will be much more difficult to cleanly derive image features using HOG or color transformation methods. A better approach to data ingestion could be investigated here, applying transformations in OpenCV for better normalization, gray scale, and sharpening to see how this could improve the feature extraction and HOG visualization to differentiate vehicles from the environment.
+
+#### 2. Lane Finding Integration
+
+Currently there is only information about vehicle detection presented, but there is no context for the way the program perceives the local environment, as was accomplished in the CarND Advanced Lane Finding project, or the Behavior Transfer project based on CNN characterization of driving behavior. This could give context to vehicle detection, by defining the search region based on lane geometry.
+
+#### 3. Neural Network Approach
+
+Previous work with the use of Convolutional Neural Networks (CNN) has shown good performance in training for object recognition based on visual training data. This was used for Traffic Sign Classification, and for training driving behavior. This could aid in vehicle classification as well as characterizing the environment, which would potentially encapsulate the benefits of combining Lane Finding with Vehicle Detection as described above.
